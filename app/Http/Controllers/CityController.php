@@ -38,7 +38,7 @@ class CityController extends Controller
         return view('cities.create');//
     }
     public function hello(){
-        echo "Hello worlk";
+        echo "Hello worlkkj";
     }
 
     /**
