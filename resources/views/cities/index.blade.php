@@ -41,6 +41,13 @@
             </td>
         </tr>
         @endforeach
+        @foreach($totals as $total)
+          <tr class="bold">
+            <td>Regionas</td>
+            <td>{{$total->region}}</td>
+            <td>Viso gyventojų  {{$total->population_sum}}</td>
+          </tr>
+        @endforeach
     </tbody>
   </table>
 <div>
