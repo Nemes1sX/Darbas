@@ -17,15 +17,15 @@ class CityController extends Controller
     {
         $cities = City::all();
          $totals = DB::table('cities')
-                     ->select('region')   
+                     ->select(DB::raw('sum(population) as population_sum, region'))
+                     ->groupBy('region')   
                    ->where(function ($query){
                        $query->where('region', '=', 'Klaipėda')
                         ->orWhere('region', '=' ,'Kretinga');
                    })
-                    ->groupBy('region')
                     ->get();
         return view('cities.index', compact('cities','totals'));
-          //->sum('population')   
+          //->  
     }
 
     /**
